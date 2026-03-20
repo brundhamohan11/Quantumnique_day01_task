@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Square_root{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int left=0;
+        int right=n;
+        int ans=0;
+        while(left<=right){
+            int mid=left+(right-left)/2;
+            if(mid*mid==n){
+                System.out.println(mid);
+                return;
+            } 
+            else if(mid*mid<n){
+                ans=mid;
+                left=mid+1;
+            } 
+            else{
+                right=mid-1;
+            }
+        }
+         System.out.println(ans); //it stores the floor value
+    }
+}//Time complexity:O(log n),Space complexity:O(1)
